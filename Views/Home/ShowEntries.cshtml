@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Entry>
+
+@{
+    ViewData["Title"] = "ShowEntries";
+}
+
+@if(Model != null){
+    <h3 class="text-warning">Entries for: @Context.Request.Query["date"]</h3>
+    @foreach (Entry entry in Model)
+    {
+        @if (entry.Description != null)
+        {
+            <div id="entries" class="mt-3">
+                <div class="d-flex align-items-center mb-2 entry-item alert alert-warning" role="alert">
+                    <i class="fa-solid fa-paperclip mr-4 p-1"></i>
+                    <div class="flex-grow-1 ml-2">@entry.Description</div>
+                    <small class="text-muted">@entry.EntryDate</small>
+                </div>
+            </div>
+        }
+    }
+}
+else{
+    <h3 class="alert alert-warning text-warning">No Entries found for: @Context.Request.Query["date"]</h3>
+}
+
+
+
+

@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <button id="prev-month" class="btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <h2 id="calendar-title"></h2>
+                <button id="next-month" class="btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div id="calendar" class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th class="weekday-header" data-weekday="1">Monday</th>
+                            <th class="weekday-header" data-weekday="2">Tuesday</th>
+                            <th class="weekday-header" data-weekday="3">Wednesday</th>
+                            <th class="weekday-header" data-weekday="4">Thursday</th>
+                            <th class="weekday-header" data-weekday="5">Friday</th>
+                            <th class="weekday-header" data-weekday="6">Saturday</th>
+                            <th class="weekday-header" data-weekday="7">Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                        <!-- Calendar grid will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Today's Information</h3>
+            <div>
+                <strong>Date:</strong> <span id="today-date"></span>
+            </div>
+            <div>
+                <strong>Weekday:</strong> <span id="weekday"></span>
+            </div>
+            <hr />
+            <h4 class="mb-2">Enter Entry</h4>
+            <!-- Success or error message will appear here -->
+            <div id="message-container" class="mb-2"></div>
+            <textarea id="day-entry" class="form-control mb-2" rows="3" placeholder="Enter your entry..."></textarea>
+            <button id="add-entry" class="btn btn-warning"><i class="fa-solid fa-book"></i> Add Entry</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Calendar.js"></script>
+
